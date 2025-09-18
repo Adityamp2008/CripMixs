@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cripmix</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Menggunakan font Poppins sebagai font utama */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Style untuk badge rasa yang aktif */
+        .flavor-badge.active {
+            background-color: #EA580C; /* orange-600 */
+            color: white;
+            border-color: #EA580C;
+        }
+        /* Style untuk link navigasi yang aktif */
+        .nav-link.active {
+            color: #EA580C;
+            font-weight: 600;
+        }
+        /* Class untuk animasi fade-in saat scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#about" class="text-2xl font-bold text-gray-800">
+                Crip<span class="text-orange-600">mixs</span>
+            </a>
+            
+            <nav id="desktop-nav" class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link text-gray-600 hover:text-orange-600 transition duration-300">About</a>
+                <a href="#products" class="nav-link text-gray-600 hover:text-orange-600 transition duration-300">Produk</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-orange-600 transition duration-300">Kontak</a>
+            </nav>
+
+            <button id="mobile-menu-button" class="md:hidden text-gray-800">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-md">
+            <a href="#about" class="block text-center py-3 px-4 text-gray-600 hover:bg-orange-50 hover:text-orange-600">About</a>
+            <a href="#products" class="block text-center py-3 px-4 text-gray-600 hover:bg-orange-50 hover:text-orange-600">Produk</a>
+            <a href="#contact" class="block text-center py-3 px-4 text-gray-600 hover:bg-orange-50 hover:text-orange-600">Kontak</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="min-h-screen flex items-center pt-24 md:pt-20 bg-gradient-to-b from-orange-50 to-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-orange-500 ">
+                    Renyahnya Setiap Gigitan, <br class="hidden md:block"> Hadirkan Keceriaan.
+                </h1>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-8 fade-in-section">
+                    Cripmixs adalah perusahaan yang berdedikasi untuk menciptakan keripik berkualitas tinggi dari bahan-bahan pilihan. Kami menggabungkan resep tradisional dengan sentuhan modern untuk menghasilkan camilan yang tak terlupakan.
+                </p>
+                <a href="#products" class="bg-orange-600 text-white font-bold py-3 px-8 rounded-full hover:bg-orange-700 transition duration-300 shadow-lg hover:shadow-orange-300 transform hover:scale-105 fade-in-section">
+                    Lihat Produk Kami
+                </a>
+            </div>
+        </section>
+
+        <section id="products" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 fade-in-section">
+                    <h2 class="text-3xl md:text-4xl font-bold">Produk Unggulan Kami</h2>
+                    <p class="text-gray-500 mt-2">Pilih favoritmu dari berbagai varian rasa yang kami sediakan.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in-section">
+                        <img src="image/logo.jpeg" alt="Keripik Pisang" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Keripik Pisang</h3>
+                            <p class="text-gray-600 mb-4">Manisnya pisang pilihan dengan kerenyahan yang pas di setiap irisan.</p>
+                            <button onclick="openModal('Keripik Pisang', 'image/logo.jpeg', ['Coklat', 'Original', 'Asin'])" class="w-full bg-gray-800 text-white font-semibold py-2 px-4 rounded-lg hover:bg-black transition duration-300">
+                                Pilih Rasa & Pesan
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in-section">
+                        <img src="image/logo.jpeg" alt="Keripik Singkong" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Keripik Singkong</h3>
+                            <p class="text-gray-600 mb-4">Rasa gurih singkong asli yang diolah hingga renyah sempurna.</p>
+                            <button onclick="openModal('Keripik Singkong', 'image/logo.jpeg', ['Original', 'Pedas'])" class="w-full bg-gray-800 text-white font-semibold py-2 px-4 rounded-lg hover:bg-black transition duration-300">
+                                Pilih Rasa & Pesan
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact" class="bg-gray-800 text-white py-16">
+            <div class="container mx-auto px-6 text-center fade-in-section">
+                <h3 class="text-2xl font-bold">Tertarik untuk Memesan?</h3>
+                <p class="mt-2 mb-6 text-gray-300">Hubungi kami melalui WhatsApp untuk pemesanan atau informasi lebih lanjut.</p>
+                <a href="https://wa.me/6281234567890?text=Halo%20Cripmixs,%20saya%20tertarik%20dengan%20produk%20Anda." target="_blank" class="bg-green-500 text-white font-bold py-3 px-8 rounded-full hover:bg-green-600 transition duration-300 inline-flex items-center shadow-lg hover:shadow-green-400/50 transform hover:scale-105">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path d="M10.233 2.003c-4.344 0-7.863 3.518-7.863 7.863 0 1.56.46 3.033 1.288 4.316l-1.343 4.903 5.02-1.313c1.24.773 2.665 1.213 4.192 1.213h.005c4.344 0 7.863-3.518 7.863-7.863s-3.518-7.863-7.863-7.863zm0 14.33c-1.343 0-2.63-.33-3.753-.93L3.81 16.59l1.01-3.693a6.53 6.53 0 01-1.6-4.13c0-3.595 2.923-6.518 6.518-6.518s6.518 2.923 6.518 6.518-2.923 6.518-6.518 6.518zm3.23-4.822c-.173-.085-1.02-.503-1.18-.56s-.276-.085-.392.085c-.116.17-.446.56-.546.675-.1.116-.2.13-.374.042-.173-.085-.728-.268-1.385-.853-.51-.458-.853-.923-.953-1.082-.1-.16-.01-.247.075-.332.073-.073.173-.188.26-.283.085-.098.116-.17.173-.283.058-.116.03-.218-.013-.303-.042-.085-.392-.953-.536-1.302-.14-.34-.286-.295-.392-.3s-.218-.013-.332-.013c-.116 0-.303.042-.46.218-.158.173-.603.59-.603 1.442 0 .853.616 1.673.702 1.79.085.116 1.228 1.866 2.98 2.62.42.18.75.283.998.362.48.15.908.13.124.08.362-.058 1.02-.417 1.163-.82.14-.403.14-.75.1-.82-.042-.073-.158-.116-.332-.2z"/></svg>
+                    Hubungi di WhatsApp
+                </a>
+            </div>
+        </footer>
+    </main>
+    
+    <div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-60 z-[60] hidden flex items-center justify-center p-4">
+        <div id="modal-content" class="bg-white rounded-lg shadow-2xl w-full max-w-md mx-auto transform transition-all duration-300 scale-95 opacity-0">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 id="modal-title" class="text-xl font-bold">Pilih Rasa</h3>
+                <button onclick="closeModal()" class="text-2xl text-gray-500 hover:text-gray-800">&times;</button>
+            </div>
+            <div class="p-6">
+                <img id="modal-image" src="" alt="Gambar Produk" class="w-full h-48 object-cover rounded-md mb-4">
+                <p class="text-gray-600 mb-4">Silakan pilih varian rasa yang Anda inginkan:</p>
+                <div id="modal-flavors" class="flex flex-wrap gap-2 mb-6"></div>
+                <button id="modal-order-button" class="w-full bg-orange-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-orange-700 transition duration-300 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path d="M10.233 2.003c-4.344 0-7.863 3.518-7.863 7.863 0 1.56.46 3.033 1.288 4.316l-1.343 4.903 5.02-1.313c1.24.773 2.665 1.213 4.192 1.213h.005c4.344 0 7.863-3.518 7.863-7.863s-3.518-7.863-7.863-7.863zm0 14.33c-1.343 0-2.63-.33-3.753-.93L3.81 16.59l1.01-3.693a6.53 6.53 0 01-1.6-4.13c0-3.595 2.923-6.518 6.518-6.518s6.518 2.923 6.518 6.518-2.923 6.518-6.518 6.518zm3.23-4.822c-.173-.085-1.02-.503-1.18-.56s-.276-.085-.392.085c-.116.17-.446.56-.546.675-.1.116-.2.13-.374.042-.173-.085-.728-.268-1.385-.853-.51-.458-.853-.923-.953-1.082-.1-.16-.01-.247.075-.332.073-.073.173-.188.26-.283.085-.098.116-.17.173-.283.058-.116.03-.218-.013-.303-.042-.085-.392-.953-.536-1.302-.14-.34-.286-.295-.392-.3s-.218-.013-.332-.013c-.116 0-.303.042-.46.218-.158.173-.603.59-.603 1.442 0 .853.616 1.673.702 1.79.085.116 1.228 1.866 2.98 2.62.42.18.75.283.998.362.48.15.908.13.124.08.362-.058 1.02-.417 1.163-.82.14-.403.14-.75.1-.82-.042-.073-.158-.116-.332-.2z"/></svg>
+                    Pesan via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // --- FUNGSI UNTUK MOBILE MENU ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            // Tutup menu mobile jika link diklik
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // --- FUNGSI UNTUK NAVIGASI AKTIF SAAT SCROLL ---
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5 // Anggap aktif jika 50% bagian terlihat
+            };
+
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // --- FUNGSI UNTUK ANIMASI FADE-IN SAAT SCROLL ---
+            const fadeInSections = document.querySelectorAll('.fade-in-section');
+            const animationObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeInSections.forEach(section => {
+                animationObserver.observe(section);
+            });
+        });
+
+        // --- FUNGSI-FUNGSI MODAL (TETAP SAMA) ---
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalContent = document.getElementById('modal-content');
+        const modalTitle = document.getElementById('modal-title');
+        const modalImage = document.getElementById('modal-image');
+        const modalFlavorsContainer = document.getElementById('modal-flavors');
+        const modalOrderButton = document.getElementById('modal-order-button');
+        let selectedFlavor = null;
+        let currentProduct = null;
+
+        function openModal(productName, imageUrl, flavors) {
+            currentProduct = productName;
+            modalTitle.innerText = `Pilih Rasa ${productName}`;
+            modalImage.src = imageUrl;
+            modalFlavorsContainer.innerHTML = '';
+            selectedFlavor = null;
+            
+            flavors.forEach(flavor => {
+                const badge = document.createElement('button');
+                badge.textContent = flavor;
+                badge.className = 'flavor-badge border border-gray-300 text-gray-700 py-1 px-3 rounded-full transition-colors duration-200 hover:bg-gray-100';
+                badge.onclick = () => selectFlavor(badge, flavor);
+                modalFlavorsContainer.appendChild(badge);
+            });
+
+            modalOverlay.classList.remove('hidden');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+            }, 50);
+        }
+
+        function closeModal() {
+            modalContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modalOverlay.classList.add('hidden');
+            }, 300);
+        }
+
+        function selectFlavor(badgeElement, flavor) {
+            document.querySelectorAll('.flavor-badge').forEach(b => b.classList.remove('active'));
+            badgeElement.classList.add('active');
+            selectedFlavor = flavor;
+        }
+
+        modalOrderButton.onclick = function() {
+            if (!selectedFlavor) {
+                alert('Silakan pilih rasa terlebih dahulu!');
+                return;
+            }
+            
+            // PENTING: Ganti dengan nomor WhatsApp Anda!
+            const phoneNumber = '6289538609714';
+            
+            const message = `Halo, saya mau pesan ${currentProduct} rasa ${selectedFlavor}.`;
+            const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(waUrl, '_blank');
+        };
+
+        modalOverlay.addEventListener('click', (event) => {
+            if (event.target === modalOverlay) closeModal();
+        });
+    </script>
+</body>
+</html>
