@@ -61,18 +61,39 @@
     </header>
 
     <main>
-        <section id="about" class="min-h-screen flex items-center pt-24 md:pt-20 bg-gradient-to-b from-orange-50 to-gray-50">
-            <div class="container mx-auto px-6 text-center">
+        <section id="about" class="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div class="flex h-full w-full">
+            <div class="absolute inset-0 z-0 opacity-90">
+                <img src="image/image.png" alt="Background Keripik Pisang" class="w-full h-full object-cover filter blur brightness-90">
+            </div>
+
+            <div class="absolute inset-0 z-10 bg-gradient-to-b from-black/70 via-black/40 to-black/60"></div>
+
+                    <!-- <div class="relative w-1/3 h-full">
+                        <img src="image/singkong.png" alt="Background Keripik Singkong" class="w-full h-full object-cover filter brightness-50">
+                        <div class="absolute inset-0 backdrop-blur-sm" style="mask-image: linear-gradient(to bottom, black 0%, transparent 30%, transparent 70%, black 100%); -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 30%, transparent 70%, black 100%);"></div>
+                    </div>
+                    <div class="relative w-1/3 h-full">
+                        <img src="image/basreng.png" alt="Background Basreng" class="w-full h-full object-cover filter brightness-50">
+                        <div class="absolute inset-0 backdrop-blur-sm" style="mask-image: linear-gradient(to bottom, black 0%, transparent 30%, transparent 70%, black 100%); -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 30%, transparent 70%, black 100%);"></div>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="absolute inset-0 z-10 bg-gradient-to-b from-black/80 via-black/40 to-black/80"></div>
+
+            <div class="relative z-20 container mx-auto px-6 text-center">
                 <div class="mb-4 fade-in-section">
-                    <svg class="w-16 h-16 mx-auto text-orange-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <svg class="w-16 h-16 mx-auto text-orange-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.572L16.5 21.75l-.398-1.178a3.375 3.375 0 00-2.455-2.456L12.75 18l1.178-.398a3.375 3.375 0 002.455-2.456L16.5 14.25l.398 1.178a3.375 3.375 0 002.456 2.456L20.25 18l-1.178.398a3.375 3.375 0 00-2.456 2.456z" />
                     </svg>
                 </div>
                 <div class="max-w-3xl mx-auto">
-                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-orange-500">
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-orange-400">
                         Renyahnya Setiap Gigitan, <br class="hidden md:block"> Hadirkan Keceriaan.
                     </h1>
-                    <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-8 fade-in-section">
+                    <p class="text-lg text-gray-200 max-w-2xl mx-auto mb-8 fade-in-section">
                         Cripmix adalah camilan renyah berkualitas tinggi dari bahan-bahan pilihan, menggabungkan resep tradisional dengan sentuhan modern untuk rasa yang tak terlupakan.
                     </p>
                     <a href="#products" class="bg-orange-600 text-white font-bold py-3 px-8 rounded-full hover:bg-orange-700 transition duration-300 shadow-lg hover:shadow-orange-300 transform hover:scale-105 fade-in-section">
@@ -82,7 +103,7 @@
             </div>
         </section>
 
-        <section id="features" class="py-20 bg-white">
+        <section id="features" class="relative z-30 -mt-16 rounded-t-3xl py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12 fade-in-section">
                     <h2 class="text-3xl md:text-4xl font-bold">Kenapa Memilih Cripmix?</h2>
